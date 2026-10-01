@@ -1,0 +1,50 @@
+import gsap from "gsap"
+import Nav from "./components/Nav"
+import Home from "./sections/Home"
+import { ScrollTrigger } from "gsap/all"
+import Projects from "./sections/Projects"
+import About from "./sections/About"
+import Skills from "./sections/Skills"
+import Contact from "./sections/Contact"
+
+
+const links = [
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills"},
+  { name: "Project", href: "#project"},
+  { name: "Contact", href: "#contact" },
+]
+
+function App() {
+    gsap.registerPlugin(ScrollTrigger) 
+
+    use
+
+    // default theme
+    document.documentElement.classList.add("dark");
+
+    return (
+      <div className="w-screen h-screen">
+        <Nav links={links} />
+        <div>
+          <Sections/>
+        </div>
+        <progress className="fixed bottom-0" max="100" value="0"></progress>
+      </div>
+    )
+}
+
+const Sections = () => {
+  return (
+    <>
+      <Home />
+      <About/>
+      <Skills/>
+      <Projects/>
+      <Contact/>
+    </>
+  )
+}
+
+export default App
